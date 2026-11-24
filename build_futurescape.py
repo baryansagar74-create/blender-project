@@ -89,56 +89,65 @@ def create_material(name, base_color=(0.8, 0.8, 0.8, 1.0), roughness=0.5, metall
 
 
 def setup_materials():
-    """Initializes the cohesive futuristic smart city material palette."""
+    """Initializes a vibrant, premium futuristic architectural diorama color palette."""
     m = {}
     # Base / Architecture
-    m['platform'] = create_material("Mat_Platform", base_color=(0.09, 0.10, 0.13, 1.0), roughness=0.35, metallic=0.05)
-    m['plinth'] = create_material("Mat_PlinthBorder", base_color=(0.14, 0.16, 0.20, 1.0), roughness=0.25, metallic=0.3)
-    m['road'] = create_material("Mat_Road", base_color=(0.11, 0.12, 0.14, 1.0), roughness=0.65, metallic=0.0)
-    m['sidewalk'] = create_material("Mat_Sidewalk", base_color=(0.82, 0.85, 0.90, 1.0), roughness=0.32, metallic=0.0)
-    m['curb'] = create_material("Mat_Curb", base_color=(0.65, 0.68, 0.73, 1.0), roughness=0.4, metallic=0.0)
-    m['marking_white'] = create_material("Mat_MarkingWhite", base_color=(0.95, 0.95, 0.95, 1.0), roughness=0.2, emission_color=(1,1,1,1), emission_strength=0.1)
-    m['marking_yellow'] = create_material("Mat_MarkingYellow", base_color=(1.0, 0.78, 0.12, 1.0), roughness=0.2)
+    m['platform'] = create_material("Mat_Platform", base_color=(0.10, 0.12, 0.16, 1.0), roughness=0.28, metallic=0.08)
+    m['plinth'] = create_material("Mat_PlinthBorder", base_color=(0.16, 0.18, 0.24, 1.0), roughness=0.22, metallic=0.25)
+    m['road'] = create_material("Mat_Road", base_color=(0.13, 0.14, 0.17, 1.0), roughness=0.58, metallic=0.0)
+    m['sidewalk'] = create_material("Mat_Sidewalk", base_color=(0.88, 0.90, 0.94, 1.0), roughness=0.28, metallic=0.0)
+    m['curb'] = create_material("Mat_Curb", base_color=(0.70, 0.73, 0.78, 1.0), roughness=0.35, metallic=0.0)
+    m['marking_white'] = create_material("Mat_MarkingWhite", base_color=(0.98, 0.98, 1.0, 1.0), roughness=0.15, emission_color=(1,1,1,1), emission_strength=0.2)
+    m['marking_yellow'] = create_material("Mat_MarkingYellow", base_color=(1.0, 0.80, 0.15, 1.0), roughness=0.2)
     
-    # Buildings
-    m['bldg_white'] = create_material("Mat_BuildingWhite", base_color=(0.93, 0.94, 0.96, 1.0), roughness=0.22, metallic=0.05)
-    m['bldg_grey'] = create_material("Mat_BuildingGrey", base_color=(0.55, 0.58, 0.64, 1.0), roughness=0.35, metallic=0.1)
-    m['bldg_dark'] = create_material("Mat_BuildingDark", base_color=(0.18, 0.20, 0.24, 1.0), roughness=0.4, metallic=0.2)
-    m['glass'] = create_material("Mat_GlassCyan", base_color=(0.04, 0.16, 0.26, 1.0), roughness=0.05, transmission=0.88, ior=1.45)
-    m['glass_warm'] = create_material("Mat_GlassWarm", base_color=(0.35, 0.25, 0.15, 1.0), roughness=0.08, transmission=0.75, ior=1.45)
-    m['window_glow'] = create_material("Mat_WindowWarmGlow", base_color=(1.0, 0.92, 0.78, 1.0), roughness=0.2, emission_color=(1.0, 0.88, 0.65, 1.0), emission_strength=3.5)
+    # Buildings & Facades
+    m['bldg_white'] = create_material("Mat_BuildingWhite", base_color=(0.96, 0.97, 0.99, 1.0), roughness=0.18, metallic=0.05)
+    m['bldg_grey'] = create_material("Mat_BuildingGrey", base_color=(0.48, 0.52, 0.59, 1.0), roughness=0.32, metallic=0.15)
+    m['bldg_dark'] = create_material("Mat_BuildingDark", base_color=(0.16, 0.18, 0.22, 1.0), roughness=0.35, metallic=0.2)
     
-    # Accents & Futuristic Elements
-    m['teal_neon'] = create_material("Mat_TealNeon", base_color=(0.0, 0.95, 0.85, 1.0), roughness=0.1, emission_color=(0.0, 0.95, 0.85, 1.0), emission_strength=4.5)
-    m['orange_neon'] = create_material("Mat_OrangeNeon", base_color=(1.0, 0.45, 0.05, 1.0), roughness=0.1, emission_color=(1.0, 0.45, 0.05, 1.0), emission_strength=4.0)
-    m['solar'] = create_material("Mat_SolarPanel", base_color=(0.04, 0.09, 0.22, 1.0), roughness=0.12, metallic=0.92)
+    # Warm Biophilic Wood Cladding & Copper Trims
+    m['wood'] = create_material("Mat_CedarWood", base_color=(0.72, 0.44, 0.24, 1.0), roughness=0.42, metallic=0.0)
+    m['copper_trim'] = create_material("Mat_CopperTrim", base_color=(0.88, 0.58, 0.38, 1.0), roughness=0.25, metallic=0.85)
+    m['gold_trim'] = create_material("Mat_GoldTrim", base_color=(0.95, 0.78, 0.35, 1.0), roughness=0.20, metallic=0.90)
     
-    # Nature & Park
-    m['grass'] = create_material("Mat_ParkGrass", base_color=(0.28, 0.58, 0.20, 1.0), roughness=0.85, metallic=0.0)
-    m['water'] = create_material("Mat_PondWater", base_color=(0.08, 0.42, 0.45, 1.0), roughness=0.03, transmission=0.82, ior=1.33)
-    m['stone'] = create_material("Mat_ParkStone", base_color=(0.38, 0.41, 0.46, 1.0), roughness=0.5, metallic=0.0)
-    m['bark'] = create_material("Mat_TreeBark", base_color=(0.28, 0.20, 0.14, 1.0), roughness=0.8, metallic=0.0)
-    m['foliage_light'] = create_material("Mat_FoliageLight", base_color=(0.32, 0.65, 0.24, 1.0), roughness=0.6, metallic=0.0)
-    m['foliage_deep'] = create_material("Mat_FoliageDeep", base_color=(0.18, 0.46, 0.16, 1.0), roughness=0.6, metallic=0.0)
-    m['flowers'] = create_material("Mat_Flowers", base_color=(0.95, 0.25, 0.45, 1.0), roughness=0.5, metallic=0.0)
+    # Crystalline Architectural Glass & Glow
+    m['glass'] = create_material("Mat_GlassCyan", base_color=(0.04, 0.30, 0.48, 1.0), roughness=0.03, transmission=0.90, ior=1.52)
+    m['glass_warm'] = create_material("Mat_GlassWarm", base_color=(0.48, 0.34, 0.20, 1.0), roughness=0.05, transmission=0.82, ior=1.50)
+    m['window_glow'] = create_material("Mat_WindowWarmGlow", base_color=(1.0, 0.88, 0.60, 1.0), roughness=0.15, emission_color=(1.0, 0.84, 0.52, 1.0), emission_strength=5.0)
+    
+    # Accents & Futuristic Energy
+    m['teal_neon'] = create_material("Mat_TealNeon", base_color=(0.0, 0.98, 0.90, 1.0), roughness=0.08, emission_color=(0.0, 0.98, 0.90, 1.0), emission_strength=5.5)
+    m['orange_neon'] = create_material("Mat_OrangeNeon", base_color=(1.0, 0.50, 0.08, 1.0), roughness=0.08, emission_color=(1.0, 0.50, 0.08, 1.0), emission_strength=5.0)
+    m['solar'] = create_material("Mat_SolarPanel", base_color=(0.05, 0.14, 0.38, 1.0), roughness=0.10, metallic=0.94)
+    
+    # Vibrant Nature & Park
+    m['grass'] = create_material("Mat_ParkGrass", base_color=(0.20, 0.65, 0.16, 1.0), roughness=0.75, metallic=0.0)
+    m['water'] = create_material("Mat_PondWater", base_color=(0.06, 0.58, 0.66, 1.0), roughness=0.02, transmission=0.85, ior=1.33)
+    m['stone'] = create_material("Mat_ParkStone", base_color=(0.42, 0.45, 0.50, 1.0), roughness=0.45, metallic=0.0)
+    m['bark'] = create_material("Mat_TreeBark", base_color=(0.32, 0.22, 0.15, 1.0), roughness=0.75, metallic=0.0)
+    m['foliage_light'] = create_material("Mat_FoliageLime", base_color=(0.38, 0.72, 0.18, 1.0), roughness=0.55, metallic=0.0)
+    m['foliage_deep'] = create_material("Mat_FoliageEmerald", base_color=(0.14, 0.48, 0.16, 1.0), roughness=0.55, metallic=0.0)
+    m['foliage_autumn'] = create_material("Mat_FoliageAutumn", base_color=(0.85, 0.24, 0.18, 1.0), roughness=0.55, metallic=0.0)
+    m['flowers_pink'] = create_material("Mat_FlowersPink", base_color=(0.98, 0.22, 0.52, 1.0), roughness=0.4, metallic=0.0)
+    m['flowers_yellow'] = create_material("Mat_FlowersYellow", base_color=(1.0, 0.82, 0.15, 1.0), roughness=0.4, metallic=0.0)
     
     # Vehicles & Smart Mobility
-    m['bus_body'] = create_material("Mat_BusBody", base_color=(0.96, 0.97, 0.99, 1.0), roughness=0.2, metallic=0.08)
-    m['bus_teal'] = create_material("Mat_BusTeal", base_color=(0.0, 0.82, 0.72, 1.0), roughness=0.25, metallic=0.1)
-    m['bus_black'] = create_material("Mat_BusTrim", base_color=(0.08, 0.08, 0.09, 1.0), roughness=0.4, metallic=0.2)
+    m['bus_body'] = create_material("Mat_BusBody", base_color=(0.98, 0.98, 1.0, 1.0), roughness=0.16, metallic=0.12)
+    m['bus_teal'] = create_material("Mat_BusTeal", base_color=(0.0, 0.88, 0.78, 1.0), roughness=0.20, metallic=0.15)
+    m['bus_black'] = create_material("Mat_BusTrim", base_color=(0.08, 0.08, 0.10, 1.0), roughness=0.35, metallic=0.2)
     m['tire'] = create_material("Mat_TireRubber", base_color=(0.06, 0.06, 0.07, 1.0), roughness=0.85, metallic=0.0)
-    m['alloy'] = create_material("Mat_AlloyRim", base_color=(0.82, 0.85, 0.89, 1.0), roughness=0.18, metallic=0.92)
-    m['headlight'] = create_material("Mat_HeadlightLED", base_color=(1.0, 1.0, 1.0, 1.0), roughness=0.1, emission_color=(1.0, 1.0, 1.0, 1.0), emission_strength=8.0)
-    m['taillight'] = create_material("Mat_TaillightLED", base_color=(1.0, 0.08, 0.08, 1.0), roughness=0.1, emission_color=(1.0, 0.08, 0.08, 1.0), emission_strength=6.0)
-    m['led_display'] = create_material("Mat_LEDDisplay", base_color=(0.0, 0.95, 0.85, 1.0), roughness=0.2, emission_color=(0.0, 0.95, 0.85, 1.0), emission_strength=5.0)
+    m['alloy'] = create_material("Mat_AlloyRim", base_color=(0.86, 0.88, 0.92, 1.0), roughness=0.15, metallic=0.94)
+    m['headlight'] = create_material("Mat_HeadlightLED", base_color=(1.0, 1.0, 1.0, 1.0), roughness=0.08, emission_color=(1.0, 1.0, 1.0, 1.0), emission_strength=9.0)
+    m['taillight'] = create_material("Mat_TaillightLED", base_color=(1.0, 0.08, 0.08, 1.0), roughness=0.08, emission_color=(1.0, 0.08, 0.08, 1.0), emission_strength=7.0)
+    m['led_display'] = create_material("Mat_LEDDisplay", base_color=(0.0, 0.98, 0.90, 1.0), roughness=0.15, emission_color=(0.0, 0.98, 0.90, 1.0), emission_strength=6.0)
     
     # Infrastructure & Hardware
-    m['metal_pole'] = create_material("Mat_MetalPole", base_color=(0.60, 0.64, 0.70, 1.0), roughness=0.25, metallic=0.85)
-    m['streetlight_glow'] = create_material("Mat_StreetlightLED", base_color=(1.0, 0.95, 0.88, 1.0), roughness=0.1, emission_color=(1.0, 0.95, 0.88, 1.0), emission_strength=7.5)
-    m['traffic_green'] = create_material("Mat_TrafficGreen", base_color=(0.1, 0.9, 0.3, 1.0), roughness=0.2, emission_color=(0.1, 0.9, 0.3, 1.0), emission_strength=6.0)
-    m['traffic_red'] = create_material("Mat_TrafficRed", base_color=(0.95, 0.1, 0.1, 1.0), roughness=0.2, emission_color=(0.95, 0.1, 0.1, 1.0), emission_strength=6.0)
-    m['tank_metal'] = create_material("Mat_TankMetal", base_color=(0.75, 0.80, 0.86, 1.0), roughness=0.2, metallic=0.9)
-    m['water_gauge'] = create_material("Mat_WaterGauge", base_color=(0.1, 0.6, 0.7, 1.0), roughness=0.1, emission_color=(0.1, 0.6, 0.7, 1.0), emission_strength=2.5)
+    m['metal_pole'] = create_material("Mat_MetalPole", base_color=(0.65, 0.68, 0.75, 1.0), roughness=0.22, metallic=0.88)
+    m['streetlight_glow'] = create_material("Mat_StreetlightLED", base_color=(1.0, 0.96, 0.90, 1.0), roughness=0.08, emission_color=(1.0, 0.96, 0.90, 1.0), emission_strength=8.5)
+    m['traffic_green'] = create_material("Mat_TrafficGreen", base_color=(0.1, 0.98, 0.35, 1.0), roughness=0.15, emission_color=(0.1, 0.98, 0.35, 1.0), emission_strength=7.0)
+    m['traffic_red'] = create_material("Mat_TrafficRed", base_color=(0.98, 0.12, 0.12, 1.0), roughness=0.15, emission_color=(0.98, 0.12, 0.12, 1.0), emission_strength=7.0)
+    m['tank_metal'] = create_material("Mat_TankMetal", base_color=(0.78, 0.82, 0.88, 1.0), roughness=0.18, metallic=0.92)
+    m['water_gauge'] = create_material("Mat_WaterGauge", base_color=(0.05, 0.85, 0.95, 1.0), roughness=0.08, emission_color=(0.05, 0.85, 0.95, 1.0), emission_strength=3.5)
 
     return m
 
@@ -300,9 +309,9 @@ def build_zone_a_business_district(col, mats):
     # Tier 2 - Mid Body (Stepped with vertical structural fins)
     add_box("Skyscraper1_Mid_Core", (5.2, 5.2, 8.0), (base_x, base_y, 7.0), col, mats['bldg_white'])
     add_box("Skyscraper1_Mid_Glass", (5.3, 4.4, 7.4), (base_x, base_y, 7.0), col, mats['glass'])
-    # Horizontal window sunshades / louvers
+    # Horizontal window sunshades / louvers with rich architectural copper/bronze trim
     for z in [4.5, 6.0, 7.5, 9.0, 10.5]:
-        add_box(f"Skyscraper1_Louver_{z}", (5.5, 5.5, 0.15), (base_x, base_y, z), col, mats['bldg_grey'])
+        add_box(f"Skyscraper1_Louver_{z}", (5.5, 5.5, 0.15), (base_x, base_y, z), col, mats['copper_trim'])
         
     # Tier 3 - Upper Tapered Crown
     add_box("Skyscraper1_Upper_Core", (4.2, 4.2, 6.0), (base_x, base_y, 14.0), col, mats['bldg_white'], bevel=0.08)
@@ -426,11 +435,12 @@ def build_zone_b_residential_district(col, mats):
     # Main Tower Core
     add_box("Res2_Main_Core", (4.4, 5.2, 11.0), (r2_x, r2_y, 5.5), col, mats['bldg_grey'], bevel=0.08)
     
-    # Protruding modular white living pods on front & rear
+    # Protruding modular living pods with alternating white and warm cedar wood finishes
     for floor_z in [2.5, 5.0, 7.5, 9.5]:
         # Alternating left and right shift
         shift = 0.5 if (floor_z in [2.5, 7.5]) else -0.5
-        pod = add_box(f"Res2_Pod_{floor_z}", (3.6, 5.6, 1.8), (r2_x + shift, r2_y, floor_z), col, mats['bldg_white'], bevel=0.05)
+        pod_mat = mats['wood'] if (floor_z in [5.0, 9.5]) else mats['bldg_white']
+        pod = add_box(f"Res2_Pod_{floor_z}", (3.6, 5.6, 1.8), (r2_x + shift, r2_y, floor_z), col, pod_mat, bevel=0.05)
         # Windows with warm golden interior glow
         add_box(f"Res2_Window_Glow_{floor_z}", (3.0, 5.7, 0.8), (r2_x + shift, r2_y, floor_z), col, mats['window_glow'])
         # Balcony rail
@@ -493,20 +503,26 @@ def build_zone_c_central_park(col, mats):
     add_cylinder("Park_Fountain_Tier2", 0.5, 0.35, (pond_x, pond_y, 0.65), col, mats['stone'], vertices=16)
     add_cylinder("Park_Fountain_JetGlow", 0.15, 0.3, (pond_x, pond_y, 0.9), col, mats['teal_neon'], vertices=12)
     
-    # Modern Pedestrian Footbridge across Pond Edge
-    bridge = add_box("Park_Footbridge", (1.0, 4.2, 0.18), (pond_x + 1.8, pond_y, 0.38), col, mats['bldg_white'], bevel=0.04)
+    # Modern Pedestrian Footbridge across Pond Edge with warm timber planks
+    bridge = add_box("Park_Footbridge", (1.0, 4.2, 0.18), (pond_x + 1.8, pond_y, 0.38), col, mats['wood'], bevel=0.04)
     bridge.rotation_euler = (0, math.radians(4), math.radians(15))
     # Bridge Handrails
     add_cylinder("Bridge_Rail_L", 0.04, 4.2, (pond_x + 1.35, pond_y, 0.65), col, mats['metal_pole'], vertices=8, rotation=(math.radians(75), 0, 0))
     add_cylinder("Bridge_Rail_R", 0.04, 4.2, (pond_x + 2.25, pond_y, 0.65), col, mats['metal_pole'], vertices=8, rotation=(math.radians(75), 0, 0))
 
     # Tree Builder Helpers
-    def plant_deciduous_tree(name, x, y, scale=1.0):
+    def plant_deciduous_tree(name, x, y, scale=1.0, foliage_type="emerald"):
         # Organic multi-tier sphere tree
         add_cylinder(f"{name}_Trunk", 0.12 * scale, 1.6 * scale, (x, y, 0.8 * scale), col, mats['bark'], vertices=10)
-        # Foliage cluster
-        add_cylinder(f"{name}_CrownMain", 1.1 * scale, 1.2 * scale, (x, y, 1.8 * scale), col, mats['foliage_deep'], vertices=14)
-        add_cylinder(f"{name}_CrownTop", 0.75 * scale, 0.9 * scale, (x, y, 2.5 * scale), col, mats['foliage_light'], vertices=12)
+        if foliage_type == "autumn":
+            mat_main, mat_top = mats['foliage_autumn'], mats['orange_neon']
+        elif foliage_type == "lime":
+            mat_main, mat_top = mats['foliage_light'], mats['foliage_light']
+        else:
+            mat_main, mat_top = mats['foliage_deep'], mats['foliage_light']
+            
+        add_cylinder(f"{name}_CrownMain", 1.1 * scale, 1.2 * scale, (x, y, 1.8 * scale), col, mat_main, vertices=14)
+        add_cylinder(f"{name}_CrownTop", 0.75 * scale, 0.9 * scale, (x, y, 2.5 * scale), col, mat_top, vertices=12)
 
     def plant_conifer_tree(name, x, y, scale=1.0):
         # Stepped cone pine tree
@@ -514,31 +530,32 @@ def build_zone_c_central_park(col, mats):
         for i, (r, z) in enumerate([(1.1, 1.4), (0.85, 2.1), (0.55, 2.7)]):
             cone = add_cylinder(f"{name}_Cone_{i}", r * scale, 0.8 * scale, (x, y, z * scale), col, mats['foliage_deep'], vertices=10)
 
-    # Distribute 14 trees in visually balanced groves
+    # Distribute 14 trees with rich color variety (including Japanese autumn maples)
     tree_coords = [
         # Northwest of pond
-        ("Tree_D1", 6.8, 15.5, 1.1, "deciduous"),
-        ("Tree_P1", 8.5, 16.5, 1.2, "conifer"),
-        ("Tree_D2", 7.2, 13.5, 0.85, "deciduous"),
+        ("Tree_D1", 6.8, 15.5, 1.1, "deciduous", "autumn"),
+        ("Tree_P1", 8.5, 16.5, 1.2, "conifer", None),
+        ("Tree_D2", 7.2, 13.5, 0.85, "deciduous", "lime"),
         # Northeast of pond
-        ("Tree_P2", 15.5, 16.0, 1.3, "conifer"),
-        ("Tree_D3", 16.5, 14.0, 1.0, "deciduous"),
-        ("Tree_D4", 14.0, 15.8, 0.9, "deciduous"),
+        ("Tree_P2", 15.5, 16.0, 1.3, "conifer", None),
+        ("Tree_D3", 16.5, 14.0, 1.0, "deciduous", "emerald"),
+        ("Tree_D4", 14.0, 15.8, 0.9, "deciduous", "lime"),
         # Southeast of pond
-        ("Tree_P3", 16.5, 7.5, 1.15, "conifer"),
-        ("Tree_D5", 15.0, 8.5, 1.25, "deciduous"),
-        ("Tree_D6", 16.0, 6.0, 0.8, "deciduous"),
+        ("Tree_P3", 16.5, 7.5, 1.15, "conifer", None),
+        ("Tree_D5", 15.0, 8.5, 1.25, "deciduous", "autumn"),
+        ("Tree_D6", 16.0, 6.0, 0.8, "deciduous", "lime"),
         # Southwest of pond
-        ("Tree_D7", 6.8, 7.2, 1.05, "deciduous"),
-        ("Tree_P4", 8.2, 6.0, 1.2, "conifer"),
-        ("Tree_D8", 6.2, 9.2, 0.75, "deciduous"),
+        ("Tree_D7", 6.8, 7.2, 1.05, "deciduous", "emerald"),
+        ("Tree_P4", 8.2, 6.0, 1.2, "conifer", None),
+        ("Tree_D8", 6.2, 9.2, 0.75, "deciduous", "emerald"),
         # Near Pond accents
-        ("Tree_Acc1", 14.5, 11.5, 0.9, "deciduous"),
-        ("Tree_Acc2", 8.5, 11.5, 0.95, "conifer"),
+        ("Tree_Acc1", 14.5, 11.5, 0.9, "deciduous", "autumn"),
+        ("Tree_Acc2", 8.5, 11.5, 0.95, "conifer", None),
     ]
-    for name, tx, ty, sc, ttype in tree_coords:
+    for item in tree_coords:
+        name, tx, ty, sc, ttype = item[0], item[1], item[2], item[3], item[4]
         if ttype == "deciduous":
-            plant_deciduous_tree(name, tx, ty, sc)
+            plant_deciduous_tree(name, tx, ty, sc, foliage_type=item[5])
         else:
             plant_conifer_tree(name, tx, ty, sc)
             
@@ -546,13 +563,14 @@ def build_zone_c_central_park(col, mats):
     for i, (bx, by, rot) in enumerate([
         (9.5, 14.0, 45), (14.0, 13.8, -45), (13.8, 9.2, 45), (9.2, 9.5, -45)
     ]):
-        bench = add_box(f"Park_Bench_{i}", (1.3, 0.45, 0.35), (bx, by, 0.32), col, mats['stone'])
+        bench = add_box(f"Park_Bench_{i}", (1.3, 0.45, 0.35), (bx, by, 0.32), col, mats['wood'])
         bench.rotation_euler = (0, 0, math.radians(rot))
 
-    # Flower Beds / Shrubbery
+    # Flower Beds / Shrubbery with pink and bright yellow blossoms
     for i, (fx, fy) in enumerate([(10.2, 6.8), (15.5, 11.5), (7.5, 11.8), (11.5, 15.8)]):
         add_box(f"FlowerBed_{i}", (1.8, 1.0, 0.25), (fx, fy, 0.25), col, mats['stone'], bevel=0.03)
-        add_box(f"FlowerBloom_{i}", (1.6, 0.8, 0.1), (fx, fy, 0.38), col, mats['flowers'])
+        flower_mat = mats['flowers_pink'] if i % 2 == 0 else mats['flowers_yellow']
+        add_box(f"FlowerBloom_{i}", (1.6, 0.8, 0.1), (fx, fy, 0.38), col, flower_mat)
 
 
 def build_zone_f_civic_centre(col, mats):
@@ -821,11 +839,11 @@ def setup_lighting(col):
     - Soft Sky Area Light (fills crevices with cool ambient sky tone)
     - Ground Bounce Fill Light
     """
-    # 1. Warm Sun Light (Golden Hour: ~4200K warm sunlight)
+    # 1. Warm Sun Light (Golden Hour: ~4200K rich warm sunlight)
     sun_data = bpy.data.lights.new(name="GoldenHour_Sun", type='SUN')
-    sun_data.energy = 4.8
-    sun_data.color = (1.0, 0.90, 0.78)
-    sun_data.angle = math.radians(12.0)  # Soft shadow penumbra
+    sun_data.energy = 6.4
+    sun_data.color = (1.0, 0.94, 0.84)
+    sun_data.angle = math.radians(14.0)  # Soft natural shadow penumbra
     sun_obj = bpy.data.objects.new(name="GoldenHour_Sun", object_data=sun_data)
     sun_obj.location = (25.0, -25.0, 32.0)
     # Point downward at ~45 degree angle towards center
@@ -835,10 +853,10 @@ def setup_lighting(col):
     # 2. Cool Sky Area Light (Ambient fill)
     sky_data = bpy.data.lights.new(name="Sky_Ambient_Fill", type='AREA')
     sky_data.shape = 'RECTANGLE'
-    sky_data.size = 42.0
-    sky_data.size_y = 42.0
-    sky_data.energy = 280.0
-    sky_data.color = (0.75, 0.85, 1.0)
+    sky_data.size = 44.0
+    sky_data.size_y = 44.0
+    sky_data.energy = 380.0
+    sky_data.color = (0.72, 0.85, 1.0)
     sky_obj = bpy.data.objects.new(name="Sky_Ambient_Fill", object_data=sky_data)
     sky_obj.location = (0.0, 0.0, 26.0)
     sky_obj.rotation_euler = (0, 0, 0)
@@ -992,7 +1010,7 @@ def configure_render_settings():
         scene.view_settings.look = 'Medium High Contrast'
     except Exception:
         pass
-    scene.view_settings.exposure = 0.15
+    scene.view_settings.exposure = 0.22
     scene.view_settings.gamma = 1.0
     
     # 3. World Ambient Lighting
@@ -1001,9 +1019,9 @@ def configure_render_settings():
     world.use_nodes = True
     bg_node = world.node_tree.nodes.get("Background")
     if bg_node:
-        # Deep architectural midnight slate background
-        bg_node.inputs["Color"].default_value = (0.05, 0.06, 0.08, 1.0)
-        bg_node.inputs["Strength"].default_value = 0.85
+        # Deep architectural studio slate background
+        bg_node.inputs["Color"].default_value = (0.10, 0.12, 0.17, 1.0)
+        bg_node.inputs["Strength"].default_value = 1.0
 
 
 def main():
